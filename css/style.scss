@@ -1,5 +1,12 @@
+$gilroy-similar-font: 'Roboto', sans-serif;
+$proxima-nova-similar-font: 'Raleway', sans-serif;
+
 body{
-    font-family: 'Raleway', sans-serif;
+    font-family: $proxima-nova-similar-font;    
+}
+
+body, a {
+    color: #3E3E3E;
 }
 
 .container {
@@ -30,8 +37,7 @@ body{
         border-radius: 3px;
         font-weight: 700;
         font-size: 20px;
-        line-height: 24px;
-        color: #3E3E3E;
+        line-height: 24px;        
     }
 
     &__right {
@@ -69,8 +75,7 @@ body{
             a {
                 text-decoration: none;
                 font-size: 18px;
-                line-height: 22px;
-                color: #3E3E3E;
+                line-height: 22px;                
             }
 
             a:hover {
@@ -85,4 +90,25 @@ body{
     background: transparent;
     width: 40px;
     height: 40px;
+}
+
+.city {
+    border: none;
+    background: transparent;
+    display: flex;
+
+    &__dropdown-icon {
+        margin-right: 4px;
+    }
+}
+
+.nav-phone {
+    font-family: $gilroy-similar-font;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 35px;
+
+    &__numbers {
+        color: #FED036;
+    }
 }
