@@ -97,8 +97,14 @@ body, a {
     background: transparent;
     display: flex;
 
-    &__dropdown-icon {
+    &::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 16px;
         margin-right: 4px;
+        background-image: url(../images/city-dropdown.svg);
+        background-repeat: no-repeat;
     }
 }
 
@@ -110,5 +116,53 @@ body, a {
 
     &__numbers {
         color: #FED036;
+    }
+}
+
+.header {
+    height: 678px;
+    background: #FED036;    
+
+    &__container {
+        display: flex;
+        height: 100%;
+    }
+
+    &__item {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__slogan {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 76px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    &__sub-title {
+        font-size: 24px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 21px;
+            height: 22px;
+            margin-right: 10px;
+            background-image: url(../images/sub-title-icon.png);
+            background-repeat: no-repeat;
+        }
     }
 }
