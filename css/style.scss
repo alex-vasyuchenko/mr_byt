@@ -1,6 +1,10 @@
 $gilroy-similar-font: 'Roboto', sans-serif;
 $proxima-nova-similar-font: 'Raleway', sans-serif;
 
+%gilroy-font {
+    font-family: $gilroy-similar-font;
+}
+
 body{
     font-family: $proxima-nova-similar-font;    
 }
@@ -164,5 +168,72 @@ body, a {
             background-image: url(../images/sub-title-icon.png);
             background-repeat: no-repeat;
         }
+    }
+}
+
+.phone-form {
+    &__content {
+        display: flex;
+    }
+
+    &__phone-wrapper {
+        position: relative;
+    }
+
+    &__phone {
+        width: 335px;
+        height: 60px;
+        background: #FFFFFF;
+        border-radius: 3px;
+        padding-left: 72px;
+        font-size: 18px;
+        line-height: 22px;
+        border: none;
+        box-sizing: border-box;
+    }
+
+    &__phone:focus {
+        border: 1px solid #3c93f0;
+        outline: none;
+    }
+
+    &__phone-icon {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 27px;
+        height: 32px;
+        left: 13px;
+        top: calc(50% - 16px);
+        background-image: url(../images/flag-rus.png);
+        background-repeat: no-repeat;
+    }
+
+    &__phone-dropdown {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 8px;
+        height: 6px;
+        left: 45px;
+        top: calc(50% - 3px);
+        background-image: url(../images/dropdown.png);
+        background-repeat: no-repeat;
+    }
+
+    &__submit {
+        width: 163px;
+        height: 60px;
+        background: #3C93F0;
+        border-radius: 3px;
+        @extend %gilroy-font;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #FFFFFF;
+        border: none;
+        position: relative;
+        left: -3px;
+        z-index: 1;
     }
 }
