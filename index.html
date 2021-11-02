@@ -24,7 +24,7 @@
                     </div>    
                 </a>
                 <div class="menu">
-                    <button class="menu-button">
+                    <button id="menu-button">
                         <img src="images/menu.svg" alt="menu">
                     </button>
                     <ul class="menu__items">
@@ -42,31 +42,107 @@
                 </div>
             </nav>
         </div>
-        <section class="header">
-            <div class="container header__container">
-                <div class="header__item">
-                    <div class="header__content">
-                        <p class="header__slogan">БЫСТРО И ПРОСТО</p>
-                        <h1 class="header__title">РЕМОНТ БЫТОВОЙ<br>ТЕХНИКИ</h1>
-                        <p class="header__sub-title">Выезд мастера от 30 минут</p>
-                        <form class="phone-form">
-                            <div class="phone-form__content">
-                                <div class="phone-form__phone-wrapper">
-                                    <input class="phone-form__phone" type="tel" name="phone" placeholder="+7 (999) 000-00-00">
-                                    <span class="phone-form__phone-icon"></span>
-                                    <span class="phone-form__phone-dropdown"></span>
-                                </div>
-                                <input class="phone-form__submit" type="submit" value="Заказать">                                
-                            </div>
-                        </form>
-                    </div>    
+    </header>
+    <div class="popup-menu">
+        <div class="popup-menu__wrapper">
+            <div class="popup-menu__content">
+                <div class="popup-menu__tab-links">
+                    <div class="popup-menu__tab-link popup-menu__active-tab-link" link="popup-menu__tab1">Ремонт стиральных машин</div>
+                    <div class="popup-menu__tab-link" link="popup-menu__tab2">Ремонт холодильников</div>
+                    <div class="popup-menu__tab-link" link="popup-menu__tab3">Ремонт посудомоечных машин</div>
                 </div>
-                <div class="header__item">
-                    <img class="header__image" src="images/master.png" alt="master">
+                <div class="popup-menu__tab-list">
+                    <div id="popup-menu__tab1" class="popup-menu__tab">
+                        <img class="popup-menu__tab-image" src="images/menu-tab1.png" alt="tab1 image">
+                        <div class="popup-menu__tab-ul-wrapper">
+                            <ul class="popup-menu__tab-ul">
+                                <li class="popup-menu__tab-li">Не сливает</li>
+                                <li class="popup-menu__tab-li">Не набирает</li>
+                                <li class="popup-menu__tab-li">Протекает вода</li>
+                                <li class="popup-menu__tab-li">Не греет</li>
+                                <li class="popup-menu__tab-li">Сильно шумит</li>
+                            </ul>    
+                            <ul class="popup-menu__tab-ul">
+                                <li class="popup-menu__tab-li">Не отжимает</li>
+                                <li class="popup-menu__tab-li">Не включается</li>
+                                <li class="popup-menu__tab-li">Не вращается</li>
+                                <li class="popup-menu__tab-li">Не открывается</li>
+                                <li class="popup-menu__tab-li">Долго стирает</li>
+                            </ul>
+                        </div>
+                        <button class="popup-menu__more-btn">подробнее</button>
+                    </div>
+                    <div id="popup-menu__tab2" class="popup-menu__tab">
+                        <img class="popup-menu__tab-image" src="images/menu-tab2.png" alt="tab2 image">
+                        <div class="popup-menu__tab-ul-wrapper">
+                            <ul class="popup-menu__tab-ul">
+                                <li class="popup-menu__tab-li">Не морозит</li>
+                                <li class="popup-menu__tab-li">Перемораживает</li>
+                                <li class="popup-menu__tab-li">Намерзает лёд</li>
+                                <li class="popup-menu__tab-li">Не включается</li>
+                                <li class="popup-menu__tab-li">Не выключается</li>
+                            </ul>    
+                            <ul class="popup-menu__tab-ul">
+                                <li class="popup-menu__tab-li">Не включается</li>
+                                <li class="popup-menu__tab-li">Сильно шумит</li>
+                                <li class="popup-menu__tab-li">Протекает</li>
+                                <li class="popup-menu__tab-li">Не холодит</li>
+                                <li class="popup-menu__tab-li">Греется</li>
+                            </ul>
+                        </div>
+                        <button class="popup-menu__more-btn">подробнее</button>
+                    </div>
+                    <div id="popup-menu__tab3" class="popup-menu__tab">
+                        <img class="popup-menu__tab-image" src="images/menu-tab3.png" alt="tab2 image">
+                        <div class="popup-menu__tab-ul-wrapper">
+                            <ul class="popup-menu__tab-ul">
+                                <li class="popup-menu__tab-li">Не сливает</li>
+                                <li class="popup-menu__tab-li">Плохо моет</li>
+                                <li class="popup-menu__tab-li">Не сушит</li>
+                                <li class="popup-menu__tab-li">Протекает</li>
+                                <li class="popup-menu__tab-li">Подключение</li>
+                            </ul>
+                            <ul class="popup-menu__tab-ul">
+                                <li class="popup-menu__tab-li">Не набирает</li>
+                                <li class="popup-menu__tab-li">Отключается</li>
+                                <li class="popup-menu__tab-li">Не греет</li>
+                                <li class="popup-menu__tab-li">Мигает</li>
+                                <li class="popup-menu__tab-li">Пищит</li>
+                            </ul>
+                        </div>
+                        <button class="popup-menu__more-btn">подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-menu__background"></div>    
+        </div>
+    </div>
+    <section class="order">
+        <div class="container order__container">
+            <div class="order__item">
+                <div class="order__content">
+                    <p class="order__slogan">БЫСТРО И ПРОСТО</p>
+                    <h1 class="order__title">РЕМОНТ БЫТОВОЙ<br>ТЕХНИКИ</h1>
+                    <p class="order__sub-title">Выезд мастера от 30 минут</p>
+                    <form class="phone-form">
+                        <div class="phone-form__content">
+                            <div class="phone-form__phone-wrapper">
+                                <input class="phone-form__phone" type="tel" name="phone" placeholder="+7 (999) 000-00-00">
+                                <span class="phone-form__phone-icon"></span>
+                                <span class="phone-form__phone-dropdown"></span>
+                            </div>
+                            <input class="phone-form__submit" type="submit" value="Заказать">                                
+                        </div>
+                    </form>
                 </div>    
             </div>
-        </section>        
-    </header>
+            <div class="order__item">
+                <img class="order__image" src="images/master.png" alt="master">
+            </div>    
+        </div>
+    </section> 
     
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/code.js"></script>
 </body>
 </html>
