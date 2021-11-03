@@ -247,7 +247,7 @@ body, a {
 
     &__content {
         position: absolute;
-        display: flex;
+        display: none; /* flex */
         width: 979px;
         height: 342px;
         top: 0;
@@ -258,6 +258,7 @@ body, a {
 
     &__background {
         position: absolute;
+        display: none;
         left: 0;
         top: 0;
         width: 100vw;

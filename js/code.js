@@ -1,13 +1,36 @@
+const PopupMenu = {
+    show: function() {
+        $(".popup-menu").show();
+        $(".popup-menu__background").fadeIn("slow");
+        $(".popup-menu__content").slideDown({
+            start: function() {
+              $(this).css({
+                display: "flex"
+              })
+            }
+          });    
+    },
+    hide: function() {
+        $(".popup-menu__content").slideUp({
+            duration: 200,
+            complete: function() {
+                $(".popup-menu__background").hide();
+                $(".popup-menu").hide();
+            }
+        });        
+    }
+};
+
 $("#menu-button").click(function() {
-    $(".popup-menu").show();
+    PopupMenu.show();
 });
 
 $(".popup-menu__more-btn").click(function() {
-    $(".popup-menu").hide();
+    PopupMenu.hide();
 });
 
 $(".popup-menu__background").click(function() {
-    $(".popup-menu").hide();
+    PopupMenu.hide();
 });
 
 $(".popup-menu__tab-link").hover(function() {

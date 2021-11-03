@@ -280,9 +280,8 @@ body, a {
 
 .popup-menu__content {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
+  /* flex */
   width: 979px;
   height: 342px;
   top: 0;
@@ -293,6 +292,7 @@ body, a {
 
 .popup-menu__background {
   position: absolute;
+  display: none;
   left: 0;
   top: 0;
   width: 100vw;
