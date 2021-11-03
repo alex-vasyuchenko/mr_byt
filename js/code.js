@@ -57,8 +57,8 @@ const PopupMenu = {
                 "popup-menu__tab3"
             ];
         
-            $(".popup-menu__tab-link").removeClass("popup-menu__active-tab-link");
-            el.addClass("popup-menu__active-tab-link");
+            $(".popup-menu__tab-link").removeClass("popup-menu__tab-link_active");
+            el.addClass("popup-menu__tab-link_active");
         
             tabs.forEach(function(tab) {
                 const content = $("#"+tab);
@@ -71,8 +71,6 @@ const PopupMenu = {
         });
     }
 };
-
-PopupMenu.init();
 
 const CityPopupMenu = {
     show: function() {
@@ -98,5 +96,26 @@ const CityPopupMenu = {
     }
 };
 
+const Phone = {
+    isValid: function(phone) {
+        var regex = /^[+]7 *[0-9]{3} *[0-9]{3}[ -]*[0-9]{2}[ -]*[0-9]{2}$/;
+        return regex.test(phone);    
+    },
+    init: function() {
+        $(".phone-form").on("submit", function(){
+            const phone = $(".phone-form__phone").val();
+            const valid = Phone.isValid(phone);
+            
+            if (!valid) {
+                $(".phone-form__phone").addClass('phone-form__phone_error');
+            }
+        
+            return valid;
+        });
+    }
+};
+
+PopupMenu.init();
 CityPopupMenu.init();
+Phone.init();
 

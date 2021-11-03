@@ -262,6 +262,11 @@ body, a {
   outline: none;
 }
 
+.phone-form__phone_error {
+  background: #FDE8E9 !important;
+  border: 1px solid #EC1C24 !important;
+}
+
 .phone-form__phone-icon {
   position: absolute;
   z-index: 1;
@@ -339,7 +344,7 @@ body, a {
   background: #F1F1F1;
 }
 
-.popup-menu__active-tab-link {
+.popup-menu__tab-link_active {
   background: #FFFFFF;
 }
 

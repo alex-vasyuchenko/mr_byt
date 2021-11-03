@@ -223,6 +223,11 @@ body, a {
         outline: none;
     }
 
+    &__phone_error {
+        background: #FDE8E9 !important;
+        border: 1px solid #EC1C24 !important;
+    }
+
     &__phone-icon {
         position: absolute;
         z-index: 1;
@@ -299,7 +304,7 @@ body, a {
         background: #F1F1F1;
     }
     
-    &__active-tab-link {
+    &__tab-link_active {
         background: #FFFFFF;
     }
 
