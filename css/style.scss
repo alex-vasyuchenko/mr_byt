@@ -5,6 +5,14 @@ $proxima-nova-similar-font: 'Raleway', sans-serif;
     font-family: $gilroy-similar-font;
 }
 
+%li-marker {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-right: 9px;
+    background: linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), #09D743;
+}
+
 body{
     font-family: $proxima-nova-similar-font;    
 }
@@ -65,6 +73,16 @@ body, a {
     display: flex;
     align-items: center;
 
+    &__city-container {
+        height: 100%;
+    }
+
+    &__city-wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
     &__items {
         margin: 0;
         padding-left: 0;
@@ -94,12 +112,20 @@ body, a {
     background: transparent;
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
-.city {
+#city {
     border: none;
     background: transparent;
     display: flex;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 
     &::before {
         content: "";
@@ -257,8 +283,9 @@ body, a {
     }
 
     &__background {
-        position: absolute;
+        position: fixed;
         display: none;
+        transform: translateY(75px);
         left: 0;
         top: 0;
         width: 100vw;
@@ -329,11 +356,7 @@ body, a {
 
     &__tab-li::before {
         content: "";
-        display: block;
-        width: 10px;
-        height: 10px;
-        margin-right: 9px;
-        background: linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), #09D743;
+        @extend %li-marker;
     }
 
     &__more-btn {
@@ -367,4 +390,61 @@ body, a {
 #popup-menu__tab2,
 #popup-menu__tab3 {
     display: none;
+}
+
+.city-popup-menu {
+    display: none;
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__content {
+        position: absolute;
+        display: none; /* flex */
+        justify-content: center;
+        align-items: center;
+        width: 284px;
+        height: 109px;
+        top: 75px;
+        left: calc(50% - 135px);
+        background: #FFFFFF;    
+        z-index: 101;
+    }
+
+    &__background {
+        position: fixed;
+        display: none;
+        transform: translateY(75px);
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: calc(100vh - 75px);
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+    }
+
+    &__list {
+        margin: 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    &__list-item {
+        margin-bottom: 13px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__list-item::before {
+        content: "";
+        @extend %li-marker;
+    }
+
+    &__list-item:hover {
+        text-decoration: underline;
+    }
 }
