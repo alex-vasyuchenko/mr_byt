@@ -1,5 +1,8 @@
 const PopupMenu = {
     show: function() {
+        $("body").css({
+            overflow: "hidden"
+        });
         $(".popup-menu").show();
         $(".popup-menu__background").fadeIn("slow");
         $(".popup-menu__content").slideDown({
@@ -16,6 +19,9 @@ const PopupMenu = {
             complete: function() {
                 $(".popup-menu__background").hide();
                 $(".popup-menu").hide();
+                $("body").css({
+                    overflow: "visible"
+                });        
             }
         });        
     }
