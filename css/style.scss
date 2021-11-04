@@ -83,27 +83,25 @@ body, a {
         align-items: center;
     }
 
-    &__items {
+    &__list {
         margin: 0;
         padding-left: 0;
         display: flex;
         list-style-type: none;
+    }
 
-        li:not(:last-child) {
-            margin-right: 40px;
-        }
+    &__item:not(:last-child) {
+        margin-right: 40px;
+    }
 
-        li {
-            a {
-                text-decoration: none;
-                font-size: 18px;
-                line-height: 22px;                
-            }
+    &__link {
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 22px;                
 
-            a:hover {
-                text-decoration: underline;
-            }
-        }
+        &:hover {
+            text-decoration: underline;
+        }    
     }
 }
 
@@ -216,16 +214,16 @@ body, a {
         line-height: 22px;
         border: none;
         box-sizing: border-box;
-    }
 
-    &__phone:focus {
-        border: 1px solid #3c93f0;
-        outline: none;
-    }
+        &:focus {
+            border: 1px solid #3c93f0;
+            outline: none;
+        }    
 
-    &__phone_error {
-        background: #FDE8E9 !important;
-        border: 1px solid #EC1C24 !important;
+        &_error {
+            background: #FDE8E9 !important;
+            border: 1px solid #EC1C24 !important;
+        }    
     }
 
     &__phone-icon {
@@ -263,6 +261,7 @@ body, a {
         line-height: 28px;
         color: #FFFFFF;
         border: none;
+        cursor: pointer;
         position: relative;
         left: -3px;
         z-index: 1;
@@ -304,10 +303,6 @@ body, a {
         background: #F1F1F1;
     }
     
-    &__tab-link_active {
-        background: #FFFFFF;
-    }
-
     &__tab-link {
         height: 65px;
         padding: 19px 0 0 35px;
@@ -317,6 +312,10 @@ body, a {
         font-size: 18px;
         line-height: 21px;
         color: #000000;
+
+        &_active {
+            background: #FFFFFF;
+        }    
     }
 
     &__tab-list {
@@ -357,11 +356,11 @@ body, a {
         margin-bottom: 19px;
         display: flex;
         align-items: center;
-    }
 
-    &__tab-li::before {
-        content: "";
-        @extend %li-marker;
+        &::before {
+            content: "";
+            @extend %li-marker;
+        }    
     }
 
     &__more-btn {
@@ -376,19 +375,20 @@ body, a {
         line-height: 17px;
         text-transform: uppercase;
         color: #FFFFFF;
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
 
-    &__more-btn::after {
-        content: "";
-        display: block;
-        width: 10px;
-        height: 11px;
-        margin-left: 5px;
-        background-image: url(../images/details.svg);
-        background-repeat: no-repeat;
+        &::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 11px;
+            margin-left: 5px;
+            background-image: url(../images/details.svg);
+            background-repeat: no-repeat;
+        }    
     }
 }
 
@@ -442,14 +442,14 @@ body, a {
         line-height: 22px;
         display: flex;
         align-items: center;
-    }
 
-    &__list-item::before {
-        content: "";
-        @extend %li-marker;
-    }
-
-    &__list-item:hover {
-        text-decoration: underline;
+        &::before {
+            content: "";
+            @extend %li-marker;
+        }
+    
+        &:hover {
+            text-decoration: underline;
+        }    
     }
 }
