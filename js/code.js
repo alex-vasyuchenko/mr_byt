@@ -1,5 +1,7 @@
 const Popup = {
+    isVisible: false,
     show: function(blockClass, duration) {
+        Popup.isVisible = true;
         $("body").css({
             overflow: "hidden"
         });
@@ -18,6 +20,7 @@ const Popup = {
         $("."+blockClass+"__content").slideUp({
             duration: 200,
             complete: function() {
+                Popup.isVisible = false;
                 $("."+blockClass+"__background").hide();
                 $("."+blockClass).hide();
                 $("body").css({
@@ -35,9 +38,17 @@ const PopupMenu = {
     hide: function() {
         Popup.hide("popup-menu");
     },
+    isVisible: function() {
+        return $(".popup-menu").is(":visible");
+    },
     init: function() {
         $("#menu-button").click(function() {
-            PopupMenu.show();
+            if (PopupMenu.isVisible()) {
+                PopupMenu.hide();
+            } else {
+                if (!Popup.isVisible)
+                    PopupMenu.show();
+            }
         });
         
         $(".popup-menu__more-btn").click(function() {
@@ -79,9 +90,17 @@ const CityPopupMenu = {
     hide: function() {
         Popup.hide("city-popup-menu");
     },
+    isVisible: function() {
+        return $(".city-popup-menu").is(":visible");
+    },
     init: function() {
         $("#city").click(function() {
-            CityPopupMenu.show();
+            if (CityPopupMenu.isVisible()) {
+                CityPopupMenu.hide();
+            } else {
+                if (!Popup.isVisible)
+                    CityPopupMenu.show();
+            }
         });
         
         $(".city-popup-menu__list-item").click(function() {

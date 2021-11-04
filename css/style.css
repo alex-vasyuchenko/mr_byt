@@ -2,11 +2,12 @@
   font-family: "Roboto", sans-serif;
 }
 
-.popup-menu__tab-li::before, .city-popup-menu__list-item::before {
-  display: block;
+.popup-menu__item::before, .city-popup-menu__list-item::before {
+  display: inline-block;
   width: 10px;
   height: 10px;
   margin-right: 9px;
+  margin-bottom: 1px;
   background: -webkit-gradient(linear, left bottom, left top, from(#09D743), to(#09D743)), -webkit-gradient(linear, left bottom, left top, from(#09D743), to(#09D743)), -webkit-gradient(linear, left bottom, left top, from(#09D743), to(#09D743)), #09D743;
   background: linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), #09D743;
 }
@@ -379,36 +380,23 @@ body, a {
   right: 0;
 }
 
-.popup-menu__tab-ul-wrapper {
-  margin: 31px 0 0 57px;
-  width: 340px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.popup-menu__tab-ul {
+.popup-menu__list {
   list-style-type: none;
+  margin: 31px 0 20px 47px;
+  width: 370px;
   padding-left: 0;
+  -webkit-columns: 2;
+          columns: 2;
 }
 
-.popup-menu__tab-li {
+.popup-menu__item {
   font-size: 18px;
   line-height: 22px;
   color: #000000;
   margin-bottom: 19px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.popup-menu__tab-li::before {
+.popup-menu__item::before {
   content: "";
 }
 
@@ -418,7 +406,7 @@ body, a {
   border-radius: 3px;
   width: 130px;
   height: 42px;
-  margin-left: 57px;
+  margin-left: 47px;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
@@ -501,12 +489,6 @@ body, a {
   cursor: pointer;
   font-size: 18px;
   line-height: 22px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .city-popup-menu__list-item::before {

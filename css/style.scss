@@ -6,10 +6,11 @@ $proxima-nova-similar-font: 'Raleway', sans-serif;
 }
 
 %li-marker {
-    display: block;
+    display: inline-block;
     width: 10px;
     height: 10px;
     margin-right: 9px;
+    margin-bottom: 1px;
     background: linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), linear-gradient(0deg, #09D743, #09D743), #09D743;
 }
 
@@ -337,25 +338,19 @@ body, a {
         right: 0;
     }
 
-    &__tab-ul-wrapper {
-        margin: 31px 0 0 57px;
-        width: 340px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__tab-ul {
+    &__list {
         list-style-type: none;
+        margin: 31px 0 20px 47px;
+        width: 370px;
         padding-left: 0;
+        columns: 2;
     }
 
-    &__tab-li {
+    &__item {
         font-size: 18px;
         line-height: 22px;
         color: #000000;
         margin-bottom: 19px;
-        display: flex;
-        align-items: center;
 
         &::before {
             content: "";
@@ -369,7 +364,7 @@ body, a {
         border-radius: 3px;
         width: 130px;
         height: 42px;
-        margin-left: 57px;
+        margin-left: 47px;
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
@@ -440,8 +435,6 @@ body, a {
         cursor: pointer;
         font-size: 18px;
         line-height: 22px;
-        display: flex;
-        align-items: center;
 
         &::before {
             content: "";
