@@ -278,24 +278,28 @@ body, a {
 
     &__content {
         position: absolute;
-        display: none; /* flex */
+        display: flex;
         width: 979px;
-        height: 342px;
+        height: 342px;        
         top: 0;
         left: calc(50% - 490px);    
         background: #FFFFFF;    
         z-index: 101;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
     }
 
     &__background {
         position: fixed;
-        display: none;
         transform: translateY(75px);
         left: 0;
         top: 0;
         width: 100vw;
         height: calc(100vh - 75px);
         background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.4s ease;
         z-index: 100;
     }
 
@@ -401,7 +405,7 @@ body, a {
 
     &__content {
         position: absolute;
-        display: none; /* flex */
+        display: flex;
         justify-content: center;
         align-items: center;
         width: 284px;
@@ -410,17 +414,21 @@ body, a {
         left: calc(50% - 135px);
         background: #FFFFFF;    
         z-index: 101;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
     }
 
     &__background {
         position: fixed;
-        display: none;
         transform: translateY(75px);
         left: 0;
         top: 0;
         width: 100vw;
         height: calc(100vh - 75px);
         background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.4s ease;
         z-index: 100;
     }
 
