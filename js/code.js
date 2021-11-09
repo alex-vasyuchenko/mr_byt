@@ -3,22 +3,21 @@ class Popup {
 
     static show(blockClass) {
         Popup.isVisible = true;
-        document.body.style.overflow = "hidden";
+        UiLib.css('body', 'overflow', 'hidden');
         UiLib.show("."+blockClass);        
         setTimeout(function(){
-            document.querySelector("."+blockClass+"__background").style.opacity = 1;
+            UiLib.fadeIn("."+blockClass+"__background");
             UiLib.slideDown("."+blockClass+"__content");
-        }, 100);        
+        }, 50);        
     }
 
     static hide(blockClass) {
         Popup.isVisible = false;
-        document.querySelector("."+blockClass+"__background").style.opacity = 0;
-        UiLib.slideUp("."+blockClass+"__content");
-        setTimeout(function(){
+        UiLib.fadeOut("."+blockClass+"__background");
+        UiLib.slideUp("."+blockClass+"__content", function() {
             UiLib.hide("."+blockClass);
-            document.body.style.overflow = "visible";    
-        }, 400);
+            UiLib.css('body', 'overflow', 'visible');
+        });
     }
 }
 
@@ -62,9 +61,7 @@ class PopupMenu extends Popup {
                 "popup-menu__tab3"
             ];
         
-            document.querySelectorAll(".popup-menu__tab-link").forEach(function(el){
-                el.classList.remove("popup-menu__tab-link_active");
-            })
+            UiLib.removeClass(".popup-menu__tab-link", "popup-menu__tab-link_active");
             el.classList.add("popup-menu__tab-link_active");
         
             tabs.forEach(function(tab) {
@@ -122,11 +119,11 @@ class Phone {
 
     static init() {
         document.querySelector(".phone-form").onsubmit = function(){
-            const phone = document.querySelector(".phone-form__phone").value;
+            const phone = UiLib.getValue(".phone-form__phone");
             const valid = Phone.isValid(phone);
             
             if (!valid) {
-                document.querySelector(".phone-form__phone").classList.add('phone-form__phone_error');
+                UiLib.addClass(".phone-form__phone", "phone-form__phone_error");
             }
         
             return valid;
@@ -137,4 +134,3 @@ class Phone {
 PopupMenu.init();
 CityPopupMenu.init();
 Phone.init();
-

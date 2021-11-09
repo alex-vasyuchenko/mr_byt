@@ -1,16 +1,28 @@
 class UiLib {
-    static hide(selector) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(function(el) {
-            el.style.display = 'none';
+    static css(selector, cssProp, cssValue) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.style[cssProp] = cssValue;
         });
     }
 
-    static show(selector) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(function(el) {
-            el.style.display = 'block';
+    static addClass(selector, className) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.classList.add(className);
         });
+    }
+
+    static removeClass(selector, className) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.classList.remove(className);
+        });
+    }
+
+    static hide(selector) {
+        this.css(selector, 'display', 'none');
+    }
+
+    static show(selector) {
+        this.css(selector, 'display', 'block');
     }
 
     static isVisible(selector) {
@@ -25,7 +37,31 @@ class UiLib {
     }
 
     static setHtml(selector, html) {
-        document.querySelector(selector).innerHTML = html;
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.innerHTML = html;
+        });
+    }
+
+    static getValue(selector) {
+        return document.querySelector(selector).value;
+    }
+
+    static setValue(selector, value) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.value = value;
+        });
+    }
+
+    static click(selector, callback) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.onclick = callback;
+        });
+    }
+
+    static hover(selector, callback) {
+        document.querySelectorAll(selector).forEach(function(el) {
+            el.onmouseover = callback;
+        });
     }
 
     /*
@@ -35,25 +71,37 @@ class UiLib {
         overflow: hidden;
         transition: max-height 0.4s ease;
     */
-    static slideDown(selector) {
-        document.querySelector(selector).style.maxHeight = window.screen.height + 'px';
+    static slideDown(selector, onFinish) {
+        this.css(selector, 'maxHeight', window.screen.height + 'px');
+
+        if (onFinish)
+            setTimeout(onFinish, 400);
     }
 
-    static slideUp(selector) {
-        document.querySelector(selector).style.maxHeight = '0';
+    static slideUp(selector, onFinish) {
+        this.css(selector, 'maxHeight', 0);
+
+        if (onFinish)
+            setTimeout(onFinish, 400);
     }
 
-    static click(selector, callback) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(function(el) {
-            el.onclick = callback;
-        });
-    }
+    /*
+        Element to fade gets the following CSS:
 
-    static hover(selector, callback) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(function(el) {
-            el.onmouseover = callback;
-        });
-    }
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    */
+    static fadeIn(selector, onFinish) {
+        this.css(selector, 'opacity', 1);
+    
+        if (onFinish)
+            setTimeout(onFinish, 400);
+    }            
+
+    static fadeOut(selector, onFinish) {
+        this.css(selector, 'opacity', 0);
+    
+        if (onFinish)
+            setTimeout(onFinish, 400);
+    }            
 }
