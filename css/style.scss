@@ -27,6 +27,12 @@ body, a {
     margin: 0 auto;
 }
 
+.page {
+    &__order {
+        margin-bottom: 70px;
+    }
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -452,5 +458,115 @@ body, a {
         &:hover {
             text-decoration: underline;
         }    
+    }
+}
+
+.help {
+    &__title {
+        @extend %gilroy-font;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 59px;
+        text-align: center;   
+        margin-bottom: 20px;    
+    }
+
+    &__text {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    &__down-icon-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__down-icon {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 30px;
+        background-image: url(../images/down-arrow.svg);
+        background-repeat: no-repeat;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 400px;
+        height: 327px;
+        background: #EDF3F6;
+        border-radius: 3px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__item-title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 30px;
+    }
+
+    &__item-list {
+        list-style-type: none;
+        margin: 0 0 0 30px;
+        padding-left: 0;
+    }
+    
+    &__item-item {
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 7px;
+            height: 7px;
+            background: #3C93F0;
+            border-radius: 1px;
+            margin-right: 10px;
+        }
+    }
+
+    &__item-link {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #3C93F0;
+        margin: 0 0 30px 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 9px;
+            margin-left: 10px;
+            background-image: url(../images/help-link.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__item-image {
+        position: absolute;
+        width: 204px;
+        top: 93px;
+        right: 18px;
     }
 }
