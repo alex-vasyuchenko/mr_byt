@@ -33,6 +33,10 @@ body, a {
   margin-bottom: 70px;
 }
 
+.page__masters {
+  margin-bottom: 70px;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -665,6 +669,10 @@ body, a {
   margin-bottom: 56px;
 }
 
+.masters__find-master-wrapper {
+  margin-bottom: 85px;
+}
+
 .find-master-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -837,4 +845,109 @@ body, a {
   bottom: 0;
   right: 0;
   z-index: -1;
+}
+
+.masters-swiper-wrapper {
+  position: relative;
+}
+
+.masters-swiper-wrapper .masters-swiper {
+  width: 100%;
+  height: 396px;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__content {
+  height: 196px;
+  border: 1px solid #EDF3F6;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  padding: 21px 0 34px 25px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  top: 6px;
+  left: 0;
+  z-index: -2;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__name::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  margin-top: 11px;
+  background: #09D743;
+  border-radius: 1px;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__experience {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__position {
+  font-size: 12px;
+  line-height: 15px;
+  width: 160px;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__image {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  z-index: -1;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__description {
+  height: 110px;
+  background: #EDF3F6;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 17px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 21px 35px 24px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.masters-swiper-wrapper .masters-swiper .swiper-slide__description::before {
+  content: "";
+  display: block;
+  min-width: 18px;
+  height: 13px;
+  margin-right: 16px;
+  background-image: url(../images/quote.svg);
+  background-repeat: no-repeat;
+}
+
+.masters-swiper-wrapper .masters-swiper__prev {
+  left: -70px;
+  top: 37%;
+}
+
+.masters-swiper-wrapper .masters-swiper__next {
+  right: -70px;
+  top: 37%;
 }

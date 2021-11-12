@@ -134,3 +134,17 @@ class Phone {
 PopupMenu.init();
 CityPopupMenu.init();
 Phone.init();
+
+const swiper = new Swiper('.masters-swiper', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    pagination: {
+        el: '.masters-swiper__pagination'
+    },  
+    navigation: {
+        nextEl: '.masters-swiper__next',
+        prevEl: '.masters-swiper__prev'
+    }  
+});

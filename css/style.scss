@@ -35,6 +35,10 @@ body, a {
     &__help {
         margin-bottom: 70px;
     }
+
+    &__masters {
+        margin-bottom: 70px;
+    }
 }
 
 .nav {
@@ -591,6 +595,10 @@ body, a {
     &__down-icon {
         margin-bottom: 56px;
     }
+
+    &__find-master-wrapper {
+        margin-bottom: 85px;
+    }
 }
 
 .find-master-wrapper {
@@ -736,5 +744,100 @@ body, a {
         bottom: 0;
         right: 0;
         z-index: -1;
+    }
+}
+
+.masters-swiper-wrapper {
+    position: relative;
+
+    .masters-swiper {
+        width: 100%;
+        height: 396px;
+    
+        .swiper-slide {
+            &__content {
+                height: 196px;
+                border: 1px solid #EDF3F6;
+                box-sizing: border-box;
+                border-radius: 3px;
+                padding: 21px 0 34px 25px;
+                margin-top: 20px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                top: 6px;
+                left: 0;
+                z-index: -2;
+            }
+        
+            &__name {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+        
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 80px;
+                    height: 5px;
+                    margin-top: 11px;
+                    background: #09D743;
+                    border-radius: 1px;
+                }
+            }
+        
+            &__experience {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                transform: translateY(-7px);
+            }
+        
+            &__position {
+                font-size: 12px;
+                line-height: 15px;
+                width: 160px;
+            }
+        
+            &__image {
+                position: absolute;
+                right: 0;
+                bottom: -40px;
+                z-index: -1;
+            }
+        
+            &__description {
+                height: 110px;
+                background: #EDF3F6;
+                border-radius: 3px;
+                font-size: 14px;
+                line-height: 17px;
+                box-sizing: border-box;
+                padding: 21px 35px 24px 25px;
+                display: flex;
+        
+                &::before {
+                    content: "";
+                    display: block;
+                    min-width: 18px;
+                    height: 13px;
+                    margin-right: 16px;
+                    background-image: url(../images/quote.svg);
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    } 
+    
+    .masters-swiper__prev {
+        left: -70px;
+        top: 37%;
+    }
+
+    .masters-swiper__next {
+        right: -70px;
+        top: 37%;
     }
 }
