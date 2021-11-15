@@ -856,6 +856,8 @@ body, a {
             width: 30px;
             height: 30px;
             background-image: url(../images/slider-prev.svg);
+            background-position: center;
+            background-repeat: no-repeat;    
         }
     }
 
@@ -869,6 +871,8 @@ body, a {
             width: 30px;
             height: 30px;
             background-image: url(../images/slider-next.svg);
+            background-position: center;
+            background-repeat: no-repeat;    
         }
     }
 }
@@ -938,6 +942,8 @@ body, a {
         width: 40px;
         height: 60px;
         background-image: url(../images/rating.svg);
+        background-position: center;
+        background-repeat: no-repeat;
         display: flex;
         justify-content: center;
         align-items: center;

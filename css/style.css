@@ -967,6 +967,8 @@ body, a {
   width: 30px;
   height: 30px;
   background-image: url(../images/slider-prev.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .masters-swiper-wrapper .masters-swiper__next {
@@ -980,6 +982,8 @@ body, a {
   width: 30px;
   height: 30px;
   background-image: url(../images/slider-next.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .reviews__section-header {
@@ -1029,6 +1033,7 @@ body, a {
   line-height: 16px;
   text-transform: uppercase;
   color: #FFF;
+  cursor: pointer;
 }
 
 .reviews__raiting-wrapper {
@@ -1059,6 +1064,8 @@ body, a {
   width: 40px;
   height: 60px;
   background-image: url(../images/rating.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
