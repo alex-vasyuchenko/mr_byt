@@ -54,13 +54,13 @@ class UiLib {
 
     static click(selector, callback) {
         document.querySelectorAll(selector).forEach(function(el) {
-            el.onclick = callback;
+            el.addEventListener('click', callback);
         });
     }
 
     static hover(selector, callback) {
         document.querySelectorAll(selector).forEach(function(el) {
-            el.onmouseover = callback;
+            el.addEventListener('mouseover', callback);            
         });
     }
 
