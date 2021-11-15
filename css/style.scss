@@ -28,15 +28,15 @@ body, a {
 }
 
 .page {
-    &__order {
-        margin-bottom: 70px;
-    }
-
-    &__help {
+    &__order, &__help {
         margin-bottom: 70px;
     }
 
     &__masters {
+        margin-bottom: 109px;
+    }
+
+    &__reviews {
         margin-bottom: 70px;
     }
 }
@@ -872,3 +872,146 @@ body, a {
         }
     }
 }
+
+.reviews {
+    &__section-header {
+        margin-bottom: 20px;
+    }
+    
+    &__down-icon {
+        margin-bottom: 28px;
+    }
+
+    &__clients {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);        
+        gap: 20px;  
+        margin-bottom: 30px;  
+    }    
+
+    &__clients-item {
+        width: 190px;
+        height: 140px;
+        object-fit: cover;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__show-all-btn {
+        border: none;
+        background: #3C93F0;
+        border-radius: 3px;
+        width: 241px;
+        height: 50px;
+        @extend %gilroy-font;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #FFF;
+    }
+
+    &__raiting-wrapper {
+        display: flex;
+    }
+
+    &__rating-item {
+        margin-right: 20px;
+    }
+}
+
+.rating {
+    width: 280px;
+    height: 72px;
+    border: 1px solid #EDF3F6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-around;
+
+    &__value {
+        width: 40px;
+        height: 60px;
+        background-image: url(../images/rating.svg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @extend %gilroy-font;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000;
+    }
+
+    &__stars-block {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 9px 0;
+        box-sizing: border-box;
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: #878787;
+    }
+
+    &__company {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__company-logo {
+        width: 80px;
+        max-height: 26px;
+        object-fit: cover;
+    }
+
+    &__company-logo_yandex {
+        margin-bottom: 4px;
+    }
+
+    &__count {
+        font-size: 12px;
+        line-height: 15px;
+        color: #878787;
+    }
+}
+
+.rating-stars {
+    position: relative;
+    font-size: 16px;
+
+    &::before {
+        content: "★★★★★";
+        display: block;
+        color: #EDF3F6;
+    }
+
+    &__active {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+
+        &::before {
+            content: "★★★★★";
+            display: block;
+            color: gold;    
+        }
+    }
+}
+
