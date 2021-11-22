@@ -1267,3 +1267,104 @@ body, a {
         background-size: cover;
     }
 }
+
+.footer {
+    position: relative;
+    height: 260px;
+    background: #3E3E3E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 33px 0 20px 0;
+    @extend %gilroy-font;
+
+    &__top-link {
+        position: absolute;
+        width: 120px;
+        height: 35px;
+        left: calc(50% - 60px);
+        top: -17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background: #3C93F0;
+        border-radius: 2px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 13px;
+            margin-left: 8px;
+            background-image: url(../images/icon-up.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &__phone {        
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 45px;
+        color: #FED036;
+    }
+
+    &__phone-code {        
+        font-size: 24px;
+        line-height: 30px;
+        color: #FFFFFF;
+    }
+
+    &__email {        
+        font-size: 14px;
+        line-height: 16px;
+        color: #FED036;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background-image: url(../images/email.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &__codes {
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+
+    &__personal-data {
+        font-size: 14px;
+        line-height: 16px;
+        color: #FED036;
+    }
+
+    &__copyright {
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+
+    &__description {
+        width: 595px;
+        font-size: 9px;
+        line-height: 10px;
+        color: #EDF3F6;
+        opacity: 0.6;
+    }
+}
