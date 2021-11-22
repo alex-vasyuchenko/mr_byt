@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.phone-form__submit, .popup-menu__tab-link, .section-header__title, .find-master__find-btn, .reviews__show-all-btn, .rating__value {
+.phone-form__submit, .popup-menu__tab-link, .section-header__title, .find-master__find-btn, .reviews__show-all-btn, .rating__value, .about-item__title, .about-info__title {
   font-family: "Roboto", sans-serif;
 }
 
@@ -936,7 +936,9 @@ body, a {
 .masters-swiper-wrapper .masters-swiper .swiper-slide__description::before {
   content: "";
   display: block;
-  min-width: 18px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 18px;
   height: 13px;
   margin-right: 16px;
   background-image: url(../images/quote.svg);
@@ -1166,4 +1168,295 @@ body, a {
   content: "★★★★★";
   display: block;
   color: gold;
+}
+
+.about__section-header {
+  margin-bottom: 20px;
+}
+
+.about__down-icon {
+  margin-bottom: 30px;
+}
+
+.about__items {
+  margin-bottom: 100px;
+}
+
+.about-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-item {
+  width: 400px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about-item__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 22px 0 13px 24px;
+}
+
+.about-item__text-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: #EDF3F6;
+  border-radius: 3px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.about-item__text {
+  font-size: 14px;
+  line-height: 17px;
+  width: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-item__text::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 35px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: #09D743;
+  border-radius: 1px;
+  margin-right: 13px;
+}
+
+.about-item__image {
+  position: absolute;
+}
+
+.about-item__image_clock {
+  bottom: 8px;
+  right: 23px;
+}
+
+.about-item__image_gear {
+  bottom: 24px;
+  right: 16px;
+}
+
+.about-item__image_present {
+  bottom: 3px;
+  right: 13px;
+}
+
+.about-info {
+  height: 735px;
+  background-image: url(../images/about-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.about-info__description {
+  position: absolute;
+  width: 43.5%;
+  height: 47.3%;
+  left: 3.63%;
+  top: 17.69%;
+}
+
+.about-info__description::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 3px;
+}
+
+.about-info__description-text {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 29px 95px 29px 34px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.about-info__description-text > p {
+  margin: 0;
+}
+
+.about-info__title {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 0;
+}
+
+.about-info__description_normal {
+  font-weight: 400;
+}
+
+.about-info__description_bold {
+  font-weight: 700;
+}
+
+.about-info__master {
+  position: absolute;
+  width: 35.887%;
+  height: 89.932%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  right: 21.37%;
+  bottom: 0;
+  background-image: url(../images/about-master.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-info__cer-items {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  left: 7.66%;
+  bottom: 10.34%;
+}
+
+.about-info__cer {
+  width: 100px;
+  height: 141px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about-info__pricelist {
+  position: absolute;
+  width: 22.58%;
+  height: 58.5%;
+  right: 4.1935%;
+  top: 17.69%;
+  background: #FFFFFF;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 22px 30px 22px;
+}
+
+.about-info__pricelist-text1 {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.about-info__pricelist-text2 {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.about-info__pricelist-image {
+  width: 235px;
+  height: 162px;
+  background-image: url(../images/pricelist.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-info__pricelist-download-btn {
+  border: none;
+  background: #FED036;
+  border-radius: 3px;
+  width: 100%;
+  height: 50px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 26px;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-info__pricelist-download-btn::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  background-image: url(../images/download.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-info__ficus {
+  position: absolute;
+  width: 23.226%;
+  height: 22.449%;
+  right: 5.887%;
+  bottom: 0;
+  background-image: url(../images/ficus.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
