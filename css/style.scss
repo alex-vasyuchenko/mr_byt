@@ -42,13 +42,44 @@ body, a {
 }
 
 .nav {
-    display: flex;
+    display: grid;
     justify-content: space-between;
     align-items: center;
+    grid-template-areas: "logo menu city phone";
+    grid-template-columns: auto auto auto auto;
     height: 75px;
+
+    &__city-container {
+        grid-area: city;
+        height: 100%;
+    }
+
+    &__city-wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__phone {
+        grid-area: phone;
+        @extend %gilroy-font;
+        font-weight: 900;
+        font-size: 28px;
+        line-height: 35px;    
+    }    
+
+    &__phone-numbers {
+        color: #FED036;
+    }
+
+    &__space {
+        grid-area: space;
+        display: none;
+    }
 }
 
 .logo {    
+    grid-area: logo;
     text-decoration: none;
 
     &__wrapper {
@@ -85,28 +116,16 @@ body, a {
 }
 
 .menu {
+    grid-area: menu;
     display: flex;
     align-items: center;
-
-    &__city-container {
-        height: 100%;
-    }
-
-    &__city-wrapper {
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
 
     &__list {
         margin: 0;
         padding-left: 0;
         display: flex;
         list-style-type: none;
-    }
-
-    &__item:not(:last-child) {
-        margin-right: 40px;
+        gap: 40px;    
     }
 
     &__link {
@@ -120,12 +139,25 @@ body, a {
     }
 }
 
-#menu-button {
+#menu__button {
     border: none;
     background: transparent;
     width: 40px;
     height: 40px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 12px;
+        background-image: url(../images/menu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 #city {
@@ -148,17 +180,6 @@ body, a {
         margin-right: 4px;
         background-image: url(../images/city-dropdown.svg);
         background-repeat: no-repeat;
-    }
-}
-
-.nav-phone {
-    font-family: $gilroy-similar-font;
-    font-weight: 900;
-    font-size: 28px;
-    line-height: 35px;
-
-    &__numbers {
-        color: #FED036;
     }
 }
 
@@ -196,6 +217,7 @@ body, a {
             background-image: url(../images/mask-icon.svg);
             background-repeat: no-repeat;
             background-position: center;
+            background-size: contain;
         }
     }
     
@@ -205,7 +227,7 @@ body, a {
     }
 
     &__item {
-        flex-basis: 50%;
+        flex: 0 0 50%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -240,6 +262,12 @@ body, a {
             background-image: url(../images/sub-title-icon.png);
             background-repeat: no-repeat;
         }
+    }
+
+    &__image {
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
     }
 }
 
@@ -1401,4 +1429,100 @@ body, a {
         color: #EDF3F6;
         opacity: 0.6;
     }
+}
+
+@media (max-width:1240px) {
+    .container {
+        max-width: 864px;
+    }
+    
+    .nav {
+        height: 55px;
+        grid-template-areas: "logo city space phone menu";
+        grid-template-columns: auto auto 1fr auto auto;    
+
+        &__phone {
+            font-size: 24px;
+            line-height: 30px;    
+        }        
+
+        &__space {
+            display: block;
+        }    
+    }    
+
+    .menu__list {
+        display: none;
+    }
+
+    #menu__button {
+        &::before {
+            width: 25px;
+            height: 19px;
+            background-image: url(../images/menu-mob.svg);
+        }
+    }    
+
+    .city-popup-menu {
+        &__content {
+            top: 55px;
+        }
+    
+        &__background {
+            transform: translateY(55px);
+            height: calc(100vh - 55px);
+        }
+    }    
+
+    .order {
+        height: 560px;
+
+        &__slogan {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    
+        &__title {
+            font-size: 42px;
+            line-height: 53px;        
+        }
+    
+        &__sub-title {
+            font-size: 18px;
+            line-height: 22px;   
+        }    
+
+        &__safety {
+            width: 28px;
+            height: 178px;
+            font-size: 10px;
+            line-height: 12px;
+    
+            &::before {
+                width: 26px;
+                height: 20px;
+            }
+        }    
+    }
+
+    #city {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .phone-form {
+        &__phone {
+            width: 294px;
+            height: 46px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    
+        &__submit {
+            width: 138px;
+            height: 46px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }    
 }
