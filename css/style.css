@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.phone-form__submit, .popup-menu__tab-link, .section-header__title, .find-master__find-btn, .reviews__show-all-btn, .rating__value, .about-item__title, .about-info__title, .footer {
+.order__safety, .phone-form__submit, .popup-menu__tab-link, .section-header__title, .find-master__find-btn, .reviews__show-all-btn, .rating__value, .about-item__title, .about-info__title, .footer {
   font-family: "Roboto", sans-serif;
 }
 
@@ -190,6 +190,46 @@ body, a {
 .order {
   height: 678px;
   background: #FED036;
+  position: relative;
+}
+
+.order__safety {
+  position: absolute;
+  width: 46px;
+  height: 193px;
+  left: 0;
+  top: calc(50% - 96px);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFFFFF;
+  background: #3C93F0;
+  border-radius: 3px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order__safety::before {
+  content: "";
+  display: block;
+  width: 31px;
+  height: 22px;
+  margin-bottom: 8px;
+  background-image: url(../images/mask-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .order__container {
