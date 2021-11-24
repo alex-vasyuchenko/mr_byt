@@ -35,7 +35,7 @@ class PopupMenu extends Popup {
     }
 
     static init() {
-        UiLib.click("#menu-button", function() {
+        UiLib.click("#menu__button", function() {
             if (PopupMenu.isVisible()) {
                 PopupMenu.hide();
             } else {
