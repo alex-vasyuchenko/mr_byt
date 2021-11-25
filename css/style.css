@@ -53,7 +53,13 @@ body, a {
 }
 
 .page__reviews {
-  margin-bottom: 55px;
+  margin-bottom: 70px;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .page__reviews {
+    margin-bottom: 55px;
+  }
 }
 
 .nav {
@@ -1521,18 +1527,30 @@ body, a {
 }
 
 .reviews__section-header {
-  margin-bottom: 11px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .reviews__section-header {
+    margin-bottom: 11px;
+  }
 }
 
 .reviews__down-icon {
-  margin-bottom: 11px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .reviews__down-icon {
+    margin-bottom: 11px;
+  }
 }
 
 .reviews__clients {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
   margin-bottom: 30px;
   gap: 20px;
 }
@@ -1541,6 +1559,8 @@ body, a {
   .reviews__clients {
     margin-bottom: 9px;
     gap: 0 12px;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     -ms-grid-rows: (1fr)[3];
         grid-template-rows: repeat(3, 1fr);
     grid-auto-rows: 0;
@@ -1758,6 +1778,12 @@ body, a {
   margin-bottom: 100px;
 }
 
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about__items {
+    margin-bottom: 30px;
+  }
+}
+
 .about-items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1912,20 +1938,53 @@ body, a {
   }
 }
 
+.about-info-container1 {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.about-info-container2 {
+  position: relative;
+  height: 100%;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info-container2 {
+    max-width: 864px;
+    margin: 0 auto;
+  }
+}
+
 .about-info {
   height: 735px;
   background-image: url(../images/about-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   position: relative;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info {
+    height: 523px;
+  }
 }
 
 .about-info__description {
   position: absolute;
-  width: 43.5%;
-  height: 47.3%;
-  left: 3.63%;
-  top: 17.69%;
+  width: 540px;
+  height: 348px;
+  left: 45px;
+  top: 130px;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__description {
+    width: 400px;
+    height: 281px;
+    left: 0;
+    top: 57px;
+  }
 }
 
 .about-info__description::before {
@@ -1962,14 +2021,36 @@ body, a {
   line-height: 22px;
 }
 
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__description-text {
+    padding: 30px;
+  }
+}
+
 .about-info__description-text > p {
   margin: 0;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__description-text > p {
+    font-size: 13px;
+    line-height: 16px;
+  }
 }
 
 .about-info__title {
   font-size: 28px;
   line-height: 34px;
   margin: 0;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__title {
+    font-size: 22px;
+    line-height: 26px;
+  }
 }
 
 .about-info__description_normal {
@@ -1990,7 +2071,8 @@ body, a {
   bottom: 0;
   background-image: url(../images/about-master.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .about-info__cer-items {
@@ -1999,23 +2081,38 @@ body, a {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  left: 7.66%;
-  bottom: 10.34%;
+  left: 95px;
+  bottom: 76px;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__cer-items {
+    gap: 7px;
+    left: 30px;
+    bottom: 48px;
+  }
 }
 
 .about-info__cer {
   width: 100px;
   height: 141px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__cer {
+    width: 79px;
+    height: 111px;
+  }
 }
 
 .about-info__pricelist {
   position: absolute;
-  width: 22.58%;
-  height: 58.5%;
-  right: 4.1935%;
-  top: 17.69%;
+  width: 280px;
+  height: 430px;
+  right: 52px;
+  top: 130px;
   background: #FFFFFF;
   border-radius: 3px;
   display: -webkit-box;
@@ -2036,11 +2133,28 @@ body, a {
   padding: 20px 22px 30px 22px;
 }
 
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__pricelist {
+    width: 240px;
+    height: 354px;
+    top: 57px;
+    right: 0;
+    padding: 20px;
+  }
+}
+
 .about-info__pricelist-text1 {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
   letter-spacing: -0.01em;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__pricelist-text1 {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
 
 .about-info__pricelist-text2 {
@@ -2050,12 +2164,27 @@ body, a {
   letter-spacing: -0.01em;
 }
 
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__pricelist-text2 {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
 .about-info__pricelist-image {
   width: 235px;
   height: 162px;
   background-image: url(../images/pricelist.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__pricelist-image {
+    width: 200px;
+    height: 138px;
+  }
 }
 
 .about-info__pricelist-download-btn {
@@ -2079,6 +2208,14 @@ body, a {
           align-items: center;
 }
 
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__pricelist-download-btn {
+    height: 42px;
+    font-size: 10px;
+    line-height: 26px;
+  }
+}
+
 .about-info__pricelist-download-btn::before {
   content: "";
   display: block;
@@ -2092,14 +2229,23 @@ body, a {
 
 .about-info__ficus {
   position: absolute;
-  width: 23.226%;
-  height: 22.449%;
-  right: 5.887%;
+  width: 288px;
+  height: 165px;
+  right: 73px;
   bottom: 0;
   background-image: url(../images/ficus.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+}
+
+@media (min-width: 864px) and (max-width: 1239px) {
+  .about-info__ficus {
+    width: 241px;
+    height: 123px;
+    right: 0;
+    bottom: -10px;
+  }
 }
 
 .footer {
