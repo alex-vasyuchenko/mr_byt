@@ -5,7 +5,7 @@ class Popup {
         Popup.isVisible = true;
         UiLib.css('body', 'overflow', 'hidden');
         UiLib.show("."+blockClass);        
-        setTimeout(function(){
+        setTimeout(() => {
             UiLib.fadeIn("."+blockClass+"__background");
             UiLib.slideDown("."+blockClass+"__content");
         }, 50);        
@@ -14,7 +14,7 @@ class Popup {
     static hide(blockClass) {
         Popup.isVisible = false;
         UiLib.fadeOut("."+blockClass+"__background");
-        UiLib.slideUp("."+blockClass+"__content", function() {
+        UiLib.slideUp("."+blockClass+"__content", () => {
             UiLib.hide("."+blockClass);
             UiLib.css('body', 'overflow', 'visible');
         });
@@ -35,7 +35,7 @@ class PopupMenu extends Popup {
     }
 
     static init() {
-        UiLib.click("#menu__button", function() {
+        UiLib.click("#menu__button", () => {
             if (PopupMenu.isVisible()) {
                 PopupMenu.hide();
             } else {
@@ -44,34 +44,29 @@ class PopupMenu extends Popup {
             }
         });
         
-        UiLib.click(".popup-menu__more-btn", function() {
+        UiLib.click(".popup-menu__more-btn", () => {
             PopupMenu.hide();
         });
         
-        UiLib.click(".popup-menu__background", function() {
+        UiLib.click(".popup-menu__background", () => {
             PopupMenu.hide();
         });
+
+        const tabLinks = document.querySelectorAll(".popup-menu__tab-link");
+        const tabContents = document.querySelectorAll(".popup-menu__tab");
         
-        UiLib.hover(".popup-menu__tab-link", function(e) {
-            const el = e.target;
-            const curTab = el.getAttribute("link");
-            const tabs = [
-                "popup-menu__tab1",
-                "popup-menu__tab2",
-                "popup-menu__tab3"
-            ];
-        
-            UiLib.removeClass(".popup-menu__tab-link", "popup-menu__tab-link_active");
-            el.classList.add("popup-menu__tab-link_active");
-        
-            tabs.forEach(function(tab) {
-                const content = "#"+tab;
-        
-                if (tab == curTab)
-                    UiLib.show(content);
-                else
-                    UiLib.hide(content);
-            });
+        tabLinks.forEach((elHover, indexHover) => {
+            elHover.addEventListener('mouseover', (e) => {
+                tabLinks.forEach((el, index) => {
+                    if (indexHover === index) {
+                        el.classList.add("popup-menu__tab-link_active");            
+                        tabContents[index].classList.add("popup-menu__tab_active");
+                    } else {
+                        el.classList.remove("popup-menu__tab-link_active");       
+                        tabContents[index].classList.remove("popup-menu__tab_active");     
+                    }
+                })
+            });            
         });
     }
 }
@@ -90,7 +85,7 @@ class CityPopupMenu extends Popup {
     }
 
     static init() {
-        UiLib.click("#city", function() {
+        UiLib.click("#city", () => {
             if (CityPopupMenu.isVisible()) {
                 CityPopupMenu.hide();
             } else {
@@ -99,13 +94,13 @@ class CityPopupMenu extends Popup {
             }
         });
         
-        UiLib.click(".city-popup-menu__list-item", function(e) {
+        UiLib.click(".city-popup-menu__list-item", (e) => {
             const city = e.target.innerHTML;
             UiLib.setHtml("#city", city);
             CityPopupMenu.hide();
         });
         
-        UiLib.click(".city-popup-menu__background", function() {
+        UiLib.click(".city-popup-menu__background", () => {
             CityPopupMenu.hide();
         });
     }
@@ -118,7 +113,7 @@ class Phone {
     }
 
     static init() {
-        document.querySelector(".phone-form").onsubmit = function(){
+        document.querySelector(".phone-form").onsubmit = () => {
             const phone = UiLib.getValue(".phone-form__phone");
             const valid = Phone.isValid(phone);
             

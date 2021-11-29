@@ -512,6 +512,11 @@ body, a {
         height: 100%;
         width: 100%;
         overflow: hidden;
+        display: none;
+    }
+
+    &__tab_active {
+        display: block !important;
     }
 
     &__tab-image {
@@ -568,11 +573,6 @@ body, a {
             background-repeat: no-repeat;
         }    
     }
-}
-
-#popup-menu__tab2,
-#popup-menu__tab3 {
-    display: none;
 }
 
 .city-popup-menu {

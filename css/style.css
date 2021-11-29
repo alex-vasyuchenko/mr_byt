@@ -603,6 +603,11 @@ body, a {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  display: none;
+}
+
+.popup-menu__tab_active {
+  display: block !important;
 }
 
 .popup-menu__tab-image {
@@ -664,11 +669,6 @@ body, a {
   margin-left: 5px;
   background-image: url(../images/details.svg);
   background-repeat: no-repeat;
-}
-
-#popup-menu__tab2,
-#popup-menu__tab3 {
-  display: none;
 }
 
 .city-popup-menu {
