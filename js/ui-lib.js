@@ -1,18 +1,18 @@
 class UiLib {
     static css(selector, cssProp, cssValue) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.style[cssProp] = cssValue;
         });
     }
 
     static addClass(selector, className) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.classList.add(className);
         });
     }
 
     static removeClass(selector, className) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.classList.remove(className);
         });
     }
@@ -37,7 +37,7 @@ class UiLib {
     }
 
     static setHtml(selector, html) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.innerHTML = html;
         });
     }
@@ -47,19 +47,19 @@ class UiLib {
     }
 
     static setValue(selector, value) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.value = value;
         });
     }
 
     static click(selector, callback) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.addEventListener('click', callback);
         });
     }
 
     static hover(selector, callback) {
-        document.querySelectorAll(selector).forEach(function(el) {
+        document.querySelectorAll(selector).forEach((el) => {
             el.addEventListener('mouseover', callback);            
         });
     }
