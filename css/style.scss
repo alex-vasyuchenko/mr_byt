@@ -15,22 +15,22 @@ $proxima-nova-similar-font: 'Raleway', sans-serif;
 }
 
 $breakpoint_medium: 1240px;
-$breakpoint_tablet: 864px;
-$breakpoint_mobile1: 688px;
-$breakpoint_mobile2: 355px;
+$breakpoint_tablet1: 1024px;
+$breakpoint_tablet2: 768px;
+$breakpoint_mobile: 375px;
 
 @mixin respond-to($media) {
     @if $media == mobile2 {
-        @media (max-width: $breakpoint_mobile2 - 1) { @content; }
+        @media (max-width: $breakpoint_mobile) { @content; }
     }
     @else if $media == mobile1 {
-        @media (min-width: $breakpoint_mobile2) and (max-width: $breakpoint_mobile1 - 1) { @content; }
+        @media (min-width: ($breakpoint_mobile + 1)) and (max-width: ($breakpoint_tablet2 - 1)) { @content; }
     }
     @else if $media == tablet {
-        @media (min-width: $breakpoint_mobile1) and (max-width: $breakpoint_tablet - 1) { @content; }
+        @media (min-width: $breakpoint_tablet2) and (max-width: $breakpoint_tablet1) { @content; }
     }
     @else if $media == medium-screens {
-        @media (min-width: $breakpoint_tablet) and (max-width: $breakpoint_medium - 1) { @content; }
+        @media (min-width: ($breakpoint_tablet1 + 1)) and (max-width: ($breakpoint_medium - 1)) { @content; }
     }
 }
 
@@ -79,13 +79,17 @@ body, a {
 
     @include respond-to(medium-screens) {
         height: 55px;
-        grid-template-areas: "logo city space phone menu";
-        grid-template-columns: auto auto 1fr auto auto;    
+        grid-template-areas: "logo menu space phone";
+        grid-template-columns: auto auto 1fr auto;    
     }
 
     &__city-container {
         grid-area: city;
         height: 100%;
+
+        @include respond-to(medium-screens) {
+            display: none;
+        }
     }
 
     &__city-wrapper {
@@ -171,7 +175,7 @@ body, a {
         gap: 40px;    
 
         @include respond-to(medium-screens) {
-            display: none;
+            gap: 30px;    
         }
     }
 
@@ -196,6 +200,14 @@ body, a {
     justify-content: center;
     align-items: center;
 
+    @include respond-to(medium-screens) {
+        width: 33px;
+        height: 33px;    
+    }
+    @include respond-to(tablet) {
+        display: none;
+    }
+
     &::before {
         content: "";
         display: block;
@@ -204,12 +216,31 @@ body, a {
         background-image: url(../images/menu.svg);
         background-repeat: no-repeat;
         background-position: center;
+    }
+}
 
-        @include respond-to(medium-screens) {
-            width: 25px;
-            height: 19px;
-            background-image: url(../images/menu-mob.svg);
-        }
+#menu__mobile-button {
+    border: none;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to(tablet) {
+        display: flex;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 19px;
+        background-image: url(../images/menu-mob.svg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
@@ -467,6 +498,11 @@ body, a {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
+
+        @include respond-to(medium-screens) {
+            width: 866px;
+            height: 302px;            
+        }
     }
 
     &__background {
@@ -485,6 +521,10 @@ body, a {
     &__tab-links {
         width: 34%;
         background: #F1F1F1;
+
+        @include respond-to(medium-screens) {
+            width: 32%;
+        }
     }
     
     &__tab-link {
@@ -497,6 +537,12 @@ body, a {
         line-height: 21px;
         color: #000000;
 
+        @include respond-to(medium-screens) {
+            font-size: 14px;
+            line-height: 16px;
+            padding: 24px 0 0 30px;
+        }
+
         &_active {
             background: #FFFFFF;
         }    
@@ -505,6 +551,10 @@ body, a {
     &__tab-list {
         height: 100%;
         width: 66%;
+
+        @include respond-to(medium-screens) {
+            width: 68%;
+        }
     }
     
     &__tab {
@@ -524,6 +574,12 @@ body, a {
         position: absolute;
         bottom: 0;
         right: 0;
+
+        @include respond-to(medium-screens) {
+            width: 223px;
+            bottom: auto;
+            top: 70px;
+        }
     }
 
     &__list {
@@ -532,6 +588,11 @@ body, a {
         width: 370px;
         padding-left: 0;
         columns: 2;
+
+        @include respond-to(medium-screens) {
+            margin: 31px 0 10px 16px;
+            width: 330px;
+        }
     }
 
     &__item {
@@ -539,6 +600,11 @@ body, a {
         line-height: 22px;
         color: #000000;
         margin-bottom: 19px;
+
+        @include respond-to(medium-screens) {
+            font-size: 16px;
+            line-height: 19px;
+        }
 
         &::before {
             content: "";
