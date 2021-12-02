@@ -26,11 +26,20 @@ $breakpoint_mobile: 375px;
     @else if $media == mobile1 {
         @media (min-width: ($breakpoint_mobile + 1)) and (max-width: ($breakpoint_tablet2 - 1)) { @content; }
     }
+    @else if $media == mobile {
+        @media (max-width: ($breakpoint_tablet2 - 1)) { @content; }
+    }
+    @else if $media == tablet-max-only {
+        @media (max-width: $breakpoint_tablet1) { @content; }
+    }
     @else if $media == tablet {
         @media (min-width: $breakpoint_tablet2) and (max-width: $breakpoint_tablet1) { @content; }
     }
     @else if $media == medium-screens {
         @media (min-width: ($breakpoint_tablet1 + 1)) and (max-width: ($breakpoint_medium - 1)) { @content; }
+    }
+    @else if $media == medium-screens-max-only {
+        @media (max-width: ($breakpoint_medium - 1)) { @content; }
     }
 }
 
@@ -83,14 +92,23 @@ body, a {
 
     @include respond-to(medium-screens) {
         height: 55px;
-        grid-template-areas: "logo menu space phone";
+        grid-template-areas: "logo menu space phone";        
+    }
+
+    @include respond-to(medium-screens-max-only) {
         grid-template-columns: auto auto 1fr auto;    
     }
 
     @include respond-to(tablet) {
-        height: 45px;
+        height: 45px;        
+    }
+
+    @include respond-to(tablet-max-only) {
         grid-template-areas: "logo city space menu";
-        grid-template-columns: auto auto 1fr auto;    
+    }
+
+    @include respond-to(mobile) {
+        height: 35px;
     }
 
     &__city-container {
@@ -119,7 +137,7 @@ body, a {
             font-size: 24px;
             line-height: 30px;    
         }     
-        @include respond-to(tablet) {
+        @include respond-to(tablet-max-only) {
             display: none;
         }        
     }    
@@ -132,7 +150,7 @@ body, a {
         grid-area: space;
         display: none;
 
-        @include respond-to(medium-screens) {
+        @include respond-to(medium-screens-max-only) {
             display: block;
         }        
     }
@@ -191,7 +209,7 @@ body, a {
             gap: 30px;    
         }
 
-        @include respond-to(tablet) {
+        @include respond-to(tablet-max-only) {
             display: none;
         }
     }
@@ -221,7 +239,7 @@ body, a {
         width: 33px;
         height: 33px;    
     }
-    @include respond-to(tablet) {
+    @include respond-to(tablet-max-only) {
         display: none;
     }
 
@@ -247,7 +265,7 @@ body, a {
     justify-content: center;
     align-items: center;
 
-    @include respond-to(tablet) {
+    @include respond-to(tablet-max-only) {
         display: flex;
     }
 
@@ -298,6 +316,9 @@ body, a {
     @include respond-to(medium-screens) {
         height: 560px;
     }
+    @include respond-to(tablet) {
+        height: 450px;
+    }
 
     &__safety {
         position: absolute;
@@ -325,6 +346,9 @@ body, a {
             font-size: 10px;
             line-height: 12px;    
         }        
+        @include respond-to(tablet-max-only) {
+            display: none;
+        }
 
         &::before {
             content: "";
@@ -365,6 +389,11 @@ body, a {
             font-size: 24px;
             line-height: 29px;
         }    
+
+        @include respond-to(tablet) {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 
     &__title {
@@ -378,6 +407,10 @@ body, a {
             font-size: 42px;
             line-height: 53px;        
         }    
+        @include respond-to(tablet) {
+            font-size: 32px;
+            line-height: 40px;
+        }
     }
 
     &__sub-title {
@@ -390,6 +423,10 @@ body, a {
             font-size: 18px;
             line-height: 22px;   
         }        
+        @include respond-to(tablet) {
+            font-size: 14px;
+            line-height: 17px;
+        }
 
         &::before {
             content: "";
@@ -434,6 +471,14 @@ body, a {
             height: 46px;
             font-size: 14px;
             line-height: 17px;
+            padding-left: 56px;
+        }    
+        @include respond-to(tablet) {
+            width: 243px;
+            height: 40px;
+            font-size: 12px;
+            line-height: 15px;
+            padding-left: 50px;
         }    
 
         &:focus {
@@ -453,11 +498,26 @@ body, a {
         z-index: 1;
         display: block;
         width: 27px;
-        height: 32px;
+        height: 23px;
         left: 13px;
-        top: calc(50% - 16px);
-        background-image: url(../images/flag-rus.png);
+        top: calc(50% - 11px);
+        background-image: url(../images/flag-rus.svg);
         background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @include respond-to(medium-screens) {
+            left: 10px;
+            top: calc(50% - 9px);
+            width: 24px;
+            height: 18px;    
+        }
+        @include respond-to(tablet) {
+            left: 12px;
+            top: calc(50% - 8px);
+            width: 20px;
+            height: 16px;    
+        }
     }
 
     &__phone-dropdown {
@@ -468,8 +528,17 @@ body, a {
         height: 6px;
         left: 45px;
         top: calc(50% - 3px);
-        background-image: url(../images/dropdown.png);
+        background-image: url(../images/dropdown.svg);
         background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @include respond-to(medium-screens) {
+            left: 40px;
+        }
+        @include respond-to(tablet) {
+            left: 36px;
+        }
     }
 
     &__submit {
@@ -493,7 +562,13 @@ body, a {
             height: 46px;
             font-size: 18px;
             line-height: 22px;
-        }    
+        }
+        @include respond-to(tablet) {
+            width: 101px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 17px;
+        }
     }
 }
 
@@ -512,6 +587,10 @@ body, a {
         right: 0;
         overflow: hidden;
         z-index: 101;
+
+        @include respond-to(mobile) {
+            height: calc(100vh - 35px);        
+        }
     }
 
     &__content {
@@ -536,6 +615,11 @@ body, a {
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 100;
+
+        @include respond-to(mobile) {
+            transform: translateY(35px);
+            height: calc(100vh - 35px);
+        }
     }
 
     &__menu1, &__menu2 {
@@ -814,6 +898,14 @@ body, a {
         @include respond-to(medium-screens) {
             top: 55px;
         }
+
+        @include respond-to(tablet) {
+            top: 45px;
+        }
+
+        @include respond-to(mobile) {
+            top: 35px;
+        }
     }
 
     &__background {
@@ -831,6 +923,16 @@ body, a {
         @include respond-to(medium-screens) {
             transform: translateY(55px);
             height: calc(100vh - 55px);
+        }    
+
+        @include respond-to(tablet) {
+            transform: translateY(45px);
+            height: calc(100vh - 45px);
+        }    
+
+        @include respond-to(mobile) {
+            transform: translateY(35px);
+            height: calc(100vh - 35px);
         }    
     }
 
