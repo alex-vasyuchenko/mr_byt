@@ -1,33 +1,60 @@
 class Popup {
     static isVisible = false;
 
-    static show(blockClass) {
+    static slideRight(selector, onFinish) {
+        UiLib.setCss(selector, "margin-left", "100%");
+
+        if (onFinish)
+            setTimeout(onFinish, 400);
+    }
+
+    static slideLeft(selector, onFinish) {
+        UiLib.setCss(selector, "margin-left", "0");
+
+        if (onFinish)
+            setTimeout(onFinish, 400);
+    }
+
+    static show(blockClass, slideHeight) {
         Popup.isVisible = true;
-        UiLib.css('body', 'overflow', 'hidden');
+        UiLib.setCss('body', 'overflow', 'hidden');
         UiLib.show("."+blockClass);        
         setTimeout(() => {
             UiLib.fadeIn("."+blockClass+"__background");
-            UiLib.slideDown("."+blockClass+"__content");
+            const contentSelector = "." + blockClass + "__content";
+            if (slideHeight) {
+                UiLib.slideDown(contentSelector);                            
+            } else {
+                this.slideLeft(contentSelector);
+            }
         }, 50);        
     }
 
-    static hide(blockClass) {
+    static hide(blockClass, slideHeight) {
         Popup.isVisible = false;
         UiLib.fadeOut("."+blockClass+"__background");
-        UiLib.slideUp("."+blockClass+"__content", () => {
+
+        const contentSelector = "." + blockClass + "__content";
+        const onFinish = () => {
             UiLib.hide("."+blockClass);
-            UiLib.css('body', 'overflow', 'visible');
-        });
+            UiLib.setCss('body', 'overflow', 'visible');
+        };
+
+        if (slideHeight) {
+            UiLib.slideUp(contentSelector, onFinish);
+        } else {
+            this.slideRight(contentSelector, onFinish);
+        }
     }
 }
 
 class PopupMenu extends Popup {
     static show() {
-        super.show("popup-menu");
+        super.show("popup-menu", true);
     }
 
     static hide() {
-        super.hide("popup-menu");
+        super.hide("popup-menu", true);
     }
 
     static isVisible() {
@@ -71,13 +98,38 @@ class PopupMenu extends Popup {
     }
 }
 
-class CityPopupMenu extends Popup {
+class MobilePopupMenu extends Popup {
     static show() {
-        super.show("city-popup-menu");
+        super.show("mobile-popup-menu", false);
     }
 
     static hide() {
-        super.hide("city-popup-menu");
+        super.hide("mobile-popup-menu", false);
+    }
+
+    static isVisible() {
+        return UiLib.isVisible(".mobile-popup-menu");
+    }
+
+    static init() {
+        UiLib.click("#menu__mobile-button", () => {
+            if (MobilePopupMenu.isVisible()) {
+                MobilePopupMenu.hide();
+            } else {
+                if (!Popup.isVisible)
+                MobilePopupMenu.show();
+            }
+        });        
+    }
+}
+
+class CityPopupMenu extends Popup {
+    static show() {
+        super.show("city-popup-menu", true);
+    }
+
+    static hide() {
+        super.hide("city-popup-menu", true);
     }
 
     static isVisible() {
@@ -128,6 +180,7 @@ class Phone {
 
 PopupMenu.init();
 CityPopupMenu.init();
+MobilePopupMenu.init();
 Phone.init();
 
 const swiper = new Swiper('.masters-swiper', {

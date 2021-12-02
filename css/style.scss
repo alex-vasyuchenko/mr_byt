@@ -49,6 +49,10 @@ body, a {
     @include respond-to(medium-screens) {
         max-width: 864px;
     }
+
+    @include respond-to(tablet) {
+        max-width: 688px;
+    }
 }
 
 .page {
@@ -83,6 +87,12 @@ body, a {
         grid-template-columns: auto auto 1fr auto;    
     }
 
+    @include respond-to(tablet) {
+        height: 45px;
+        grid-template-areas: "logo city space menu";
+        grid-template-columns: auto auto 1fr auto;    
+    }
+
     &__city-container {
         grid-area: city;
         height: 100%;
@@ -108,7 +118,10 @@ body, a {
         @include respond-to(medium-screens) {
             font-size: 24px;
             line-height: 30px;    
-        }            
+        }     
+        @include respond-to(tablet) {
+            display: none;
+        }        
     }    
 
     &__phone-numbers {
@@ -177,6 +190,10 @@ body, a {
         @include respond-to(medium-screens) {
             gap: 30px;    
         }
+
+        @include respond-to(tablet) {
+            display: none;
+        }
     }
 
     &__link {
@@ -224,6 +241,7 @@ body, a {
     background: transparent;
     width: 25px;
     height: 25px;
+    padding: 0;
     cursor: pointer;
     display: none;
     justify-content: center;
@@ -479,6 +497,131 @@ body, a {
     }
 }
 
+.mobile-popup-menu {
+    display: none;
+
+    &__wrapper1 {
+        position: relative;
+    }
+
+    &__wrapper2 {
+        position: absolute;
+        width: 485px;
+        height: calc(100vh - 45px);        
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: 101;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        margin-left: 100%;
+        background: #FFFFFF;            
+        transition: margin-left 0.4s ease;
+    }
+
+    &__background {
+        position: fixed;
+        transform: translateY(45px);
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: calc(100vh - 45px);
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 100;
+    }
+
+    &__menu1, &__menu2 {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    &__menu1 {
+        margin: 30px 0 54px 32px;
+    }
+
+    &__menu2 {
+        margin: 0 0 0 32px;
+    }
+
+    &__menu1-item:not(:last-child) {
+        margin-bottom: 36px;
+    }
+
+    &__menu2-item:not(:last-child) {
+        margin-bottom: 26px;
+    }
+
+    &__menu1-link {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 27px;
+        color: #000000;
+    }
+
+    &__menu2-link {
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    &__footer {
+        text-align: center;
+    }
+
+    &__work-time {
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    &__phone {
+        @extend %gilroy-font;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 40px;
+        color: #FED036;
+        margin-bottom: 20px;
+    }
+
+    &__phone-code {
+        @extend %gilroy-font;
+        font-size: 24px;
+        line-height: 30px;
+        color: #3E3E3E;
+    }
+
+    &__call-master {
+        height: 60px;
+        background: #EDF3F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__call-master-btn {
+        width: 151px;
+        height: 35px;
+        border: none;
+        background: #3C93F0;
+        border-radius: 3px;
+        @extend %gilroy-font;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+}
+
 .popup-menu {
     display: none;
 
@@ -516,6 +659,11 @@ body, a {
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 100;
+
+        @include respond-to(medium-screens) {
+            transform: translateY(55px);
+            height: calc(100vh - 55px);
+        }
     }
 
     &__tab-links {

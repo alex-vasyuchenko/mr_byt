@@ -1,8 +1,15 @@
 class UiLib {
-    static css(selector, cssProp, cssValue) {
+    static setCss(selector, cssProp, cssValue) {
         document.querySelectorAll(selector).forEach((el) => {
             el.style[cssProp] = cssValue;
         });
+    }
+
+    static getCss(selector, cssProp) {
+        const el = document.querySelector(selector);
+        const styles = window.getComputedStyle(el);
+
+        return styles[cssProp];
     }
 
     static addClass(selector, className) {
@@ -18,18 +25,15 @@ class UiLib {
     }
 
     static hide(selector) {
-        this.css(selector, 'display', 'none');
+        this.setCss(selector, 'display', 'none');
     }
 
     static show(selector) {
-        this.css(selector, 'display', 'block');
+        this.setCss(selector, 'display', 'block');
     }
 
     static isVisible(selector) {
-        const el = document.querySelector(selector);
-        const style = window.getComputedStyle(el);
-
-        return style.display !== 'none';
+        return this.getCss(selector, 'display') !== 'none';
     }
 
     static getHtml(selector) {
@@ -72,14 +76,14 @@ class UiLib {
         transition: max-height 0.4s ease;
     */
     static slideDown(selector, onFinish) {
-        this.css(selector, 'maxHeight', window.screen.height + 'px');
+        this.setCss(selector, 'max-height', window.screen.height + 'px');
 
         if (onFinish)
             setTimeout(onFinish, 400);
     }
 
     static slideUp(selector, onFinish) {
-        this.css(selector, 'maxHeight', 0);
+        this.setCss(selector, 'max-height', 0);
 
         if (onFinish)
             setTimeout(onFinish, 400);
@@ -92,14 +96,14 @@ class UiLib {
         transition: opacity 0.4s ease;
     */
     static fadeIn(selector, onFinish) {
-        this.css(selector, 'opacity', 1);
+        this.setCss(selector, 'opacity', 1);
     
         if (onFinish)
             setTimeout(onFinish, 400);
     }            
 
     static fadeOut(selector, onFinish) {
-        this.css(selector, 'opacity', 0);
+        this.setCss(selector, 'opacity', 0);
     
         if (onFinish)
             setTimeout(onFinish, 400);
