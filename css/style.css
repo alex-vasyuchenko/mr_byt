@@ -766,10 +766,10 @@ body, a {
 .mobile-popup-menu__wrapper {
   position: fixed;
   width: 485px;
-  height: calc(100% - 45px);
   -webkit-transform: translateY(45px);
           transform: translateY(45px);
   top: 0;
+  bottom: 45px;
   right: 0;
   overflow: hidden;
   z-index: 101;
@@ -777,7 +777,7 @@ body, a {
 
 @media (max-width: 767px) {
   .mobile-popup-menu__wrapper {
-    height: calc(100% - 35px);
+    bottom: 35px;
     -webkit-transform: translateY(35px);
             transform: translateY(35px);
     width: 291px;
@@ -809,8 +809,8 @@ body, a {
           transform: translateY(45px);
   left: 0;
   top: 0;
+  bottom: 45px;
   width: 100%;
-  height: calc(100% - 45px);
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   -webkit-transition: opacity 0.4s ease;
@@ -822,7 +822,7 @@ body, a {
   .mobile-popup-menu__background {
     -webkit-transform: translateY(35px);
             transform: translateY(35px);
-    height: calc(100vh - 35px);
+    bottom: 35px;
   }
 }
 
