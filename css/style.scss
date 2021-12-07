@@ -611,21 +611,19 @@ body, a {
 .mobile-popup-menu {
     display: none;
 
-    &__wrapper1 {
-        position: relative;
-    }
-
-    &__wrapper2 {
-        position: absolute;
+    &__wrapper {
+        position: fixed;
         width: 485px;
-        height: calc(100vh - 45px);        
+        height: calc(100% - 45px);   
+        transform: translateY(45px);     
         top: 0;
         right: 0;
         overflow: hidden;
         z-index: 101;
 
         @include respond-to(mobile) {
-            height: calc(100vh - 35px);        
+            height: calc(100% - 35px);        
+            transform: translateY(35px);
             width: 291px;
         }
     }
@@ -646,8 +644,8 @@ body, a {
         transform: translateY(45px);
         left: 0;
         top: 0;
-        width: 100vw;
-        height: calc(100vh - 45px);
+        width: 100%;
+        height: calc(100% - 45px);
         background: rgba(0, 0, 0, 0.5);
         opacity: 0;
         transition: opacity 0.4s ease;
@@ -789,8 +787,8 @@ body, a {
         transform: translateY(75px);
         left: 0;
         top: 0;
-        width: 100vw;
-        height: calc(100vh - 75px);
+        width: 100%;
+        height: calc(100% - 75px);
         background: rgba(0, 0, 0, 0.5);
         opacity: 0;
         transition: opacity 0.4s ease;
@@ -798,7 +796,7 @@ body, a {
 
         @include respond-to(medium-screens) {
             transform: translateY(55px);
-            height: calc(100vh - 55px);
+            height: calc(100% - 55px);
         }
     }
 
@@ -965,8 +963,8 @@ body, a {
         transform: translateY(75px);
         left: 0;
         top: 0;
-        width: 100vw;
-        height: calc(100vh - 75px);
+        width: 100%;
+        height: calc(100% - 75px);
         background: rgba(0, 0, 0, 0.5);
         opacity: 0;
         transition: opacity 0.4s ease;
@@ -974,17 +972,17 @@ body, a {
 
         @include respond-to(medium-screens) {
             transform: translateY(55px);
-            height: calc(100vh - 55px);
+            height: calc(100% - 55px);
         }    
 
         @include respond-to(tablet) {
             transform: translateY(45px);
-            height: calc(100vh - 45px);
+            height: calc(100% - 45px);
         }    
 
         @include respond-to(mobile) {
             transform: translateY(35px);
-            height: calc(100vh - 35px);
+            height: calc(100% - 35px);
         }    
     }
 
